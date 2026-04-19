@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import BentoGrid from '../components/BentoGrid.astro';
+import Services from '../components/Services.astro';
+import AdPlatforms from '../components/AdPlatforms.astro';
+import Contact from '../components/Contact.astro';
+import WhatsappButton from '../components/WhatsappButton.jsx';
+import CookieBanner from '../components/CookieBanner.jsx';
+import AppWrapper from '../components/AppWrapper.jsx';
+---
+
+<Layout title="VOSK MEDIA | Growth Boutique">
+	<main class="bg-black relative min-h-screen font-['Inter']">
+        <AppWrapper client:only="react" />
+
+		<Hero />
+		
+		<div class="py-12 border-b border-white/5 overflow-hidden select-none">
+			<div class="flex animate-marquee font-[900] uppercase text-6xl md:text-8xl opacity-10 leading-none">
+				<span class="mx-8">Retention</span>
+				<span class="mx-8">Scale</span>
+				<span class="mx-8 italic text-stroke">Data</span>
+				<span class="mx-8">Retention</span>
+				<span class="mx-8">Scale</span>
+				<span class="mx-8 italic text-stroke">Data</span>
+			</div>
+		</div>
+
+        <AdPlatforms />
+        <BentoGrid />
+        <Services />
+        <Contact />
+
+        <footer class="py-24 flex flex-col items-center bg-black border-t border-white/5 px-6 text-center relative">
+            <img src="/logo.png" alt="VOSK" class="h-4 opacity-20 mb-10 mt-12" />
+            <div class="flex gap-10 mb-12">
+                <a href="#" class="group opacity-30 hover:opacity-100 transition-all"><img src="/instagram.svg" class="w-5 h-5 invert" /></a>
+                <a href="#" class="group opacity-30 hover:opacity-100 transition-all"><img src="/linkedin.svg" class="w-5 h-5 invert" /></a>
+                <a href="#" class="group opacity-30 hover:opacity-100 transition-all"><img src="/facebook.svg" class="w-5 h-5 invert" /></a>
+            </div>
+            <p class="text-[9px] uppercase tracking-[0.6em] text-white/10 font-light italic">
+                © 2026 VOSK MEDIA. GLOBAL GROWTH OPERATION.
+            </p>
+        </footer>
+
+        <WhatsappButton client:only="react" />
+        <CookieBanner client:only="react" />
+	</main>
+</Layout>
