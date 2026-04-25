@@ -1,0 +1,79 @@
+---
+// src/components/Services.astro
+const services = [
+  {
+    category: "01 / Management",
+    categoryPt: "01 / Gestão",
+    title: "GROWTH CONSULTANCY",
+    titlePt: "CONSULTORIA DE GROWTH",
+    description: "Strategic project management and growth scaling focused on maximizing ROI and operational efficiency.",
+    descriptionPt: "Gestão estratégica de projetos e escala de crescimento com foco em ROI máximo e eficiência operacional.",
+    features: ["Data-driven Strategy", "Agile Execution", "Profit Optimization"],
+    featuresPt: ["Estratégia baseada em dados", "Execução Ágil", "Otimização de Lucro"]
+  },
+  {
+    category: "02 / Media",
+    categoryPt: "02 / Mídia",
+    title: "PAID TRAFFIC SCALE",
+    titlePt: "ESCALA DE TRÁFEGO PAGO",
+    description: "High-performance online advertising management across global platforms to skyrocket business performance.",
+    descriptionPt: "Gestão de publicidade online de alta performance em plataformas globais para explodir o desempenho do negócio.",
+    features: ["Google Ads Expert", "Meta Ads Scale", "TikTok & Pinterest Ads"],
+    featuresPt: ["Especialista Google Ads", "Escala em Meta Ads", "TikTok & Pinterest Ads"]
+  },
+  {
+    category: "03 / Creative",
+    categoryPt: "03 / Criativos",
+    title: "CONVERSION NARRATIVES",
+    titlePt: "NARRATIVAS DE CONVERSÃO",
+    description: "Building high-retention strategic creatives designed 100% for conversion, leaving vanity metrics behind.",
+    descriptionPt: "Construção de criativos estratégicos de alta retenção desenhados 100% para conversão, ignorando métricas de vaidade.",
+    features: ["Cinematic Conversion", "A/B Testing Flow", "High-End Visuals"],
+    featuresPt: ["Conversão Cinemática", "Fluxo de Testes A/B", "Visuais de Alto Padrão"]
+  }
+];
+---
+
+<section class="bg-black border-t border-white/5 w-full">
+  <div class="flex flex-col md:flex-row border-b border-white/10">
+    {services.map((service) => (
+      <div class="flex-1 p-10 md:p-16 border-b md:border-b-0 md:border-r border-white/10 group hover:bg-[#080808] transition-all duration-700 min-h-[550px] flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-start mb-16">
+            <span class="text-[10px] tracking-[0.4em] uppercase font-black text-[#FF5F00] italic">
+              {service.category} <span class="text-white/20 ml-2 border-l border-white/10 pl-2 font-normal not-italic">{service.categoryPt}</span>
+            </span>
+          </div>
+          
+          <h3 class="text-4xl md:text-5xl font-[900] uppercase italic leading-[0.85] tracking-tighter mb-8 group-hover:translate-x-2 transition-transform duration-500">
+            {service.title}<br/>
+            <span class="text-sm md:text-base font-light opacity-30 not-italic block mt-2 tracking-widest">{service.titlePt}</span>
+          </h3>
+
+          <p class="text-white/50 text-xs md:text-sm leading-relaxed mb-10 font-['Inter'] max-w-sm">
+            {service.description} 
+            <span class="block mt-4 text-white/20 italic">{service.descriptionPt}</span>
+          </p>
+
+          <ul class="space-y-4">
+            {service.features.map((f, i) => (
+              <li class="flex flex-col gap-1">
+                <span class="text-[10px] uppercase tracking-widest font-bold text-white/90 flex items-center gap-2">
+                   <span class="w-1 h-1 bg-[#FF5F00] rounded-full"></span> {f}
+                </span>
+                <span class="text-[8px] uppercase tracking-widest text-white/20 ml-3">{service.featuresPt[i]}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <div class="mt-20 pt-8 border-t border-white/5">
+          <a href="#contact" class="flex items-center justify-between group/link">
+              <span class="text-[10px] font-black uppercase tracking-[0.3em]">Work with Us / <span class="opacity-30">Trabalhe conosco</span></span>
+              <span class="text-2xl group-hover/link:translate-x-2 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

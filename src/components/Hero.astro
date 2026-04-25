@@ -1,0 +1,38 @@
+---
+// src/components/Hero.astro
+---
+<section class="relative min-h-[90vh] w-full flex flex-col justify-center items-center px-6 bg-black overflow-hidden">
+  <nav class="absolute top-0 left-0 w-full p-10 flex justify-between items-center z-50">
+    <img src="/logo.png" alt="VOSK MEDIA" class="h-5 w-auto object-contain" />
+    <div class="flex gap-8 items-center">
+       <a href="#"><img src="/instagram.svg" class="w-5 h-5 invert opacity-40" /></a>
+       <a href="#"><img src="/linkedin.svg" class="w-5 h-5 invert opacity-40" /></a>
+    </div>
+  </nav>
+
+  <div class="text-center z-10 mt-20 opacity-0 animate-fade-up">
+    <h1 class="text-[17vw] md:text-[14vw] font-[900] leading-[0.75] tracking-tighter uppercase font-['Inter']">
+      VOSK<br/>
+      <span class="text-stroke italic block mt-4">MEDIA</span>
+    </h1>
+    
+    <div class="flex flex-col md:flex-row items-center justify-center gap-12 mt-20">
+      <p class="max-w-[300px] text-[10px] md:text-[11px] uppercase tracking-[0.3em] font-light text-white/40 text-left border-l border-white/20 pl-8">
+        High-end creative meets data strategy for <span class="text-white font-bold italic">global scale.</span>
+      </p>
+      <a href="#contact" class="bg-white text-black px-14 py-6 text-[11px] font-[900] uppercase tracking-[0.2em] hover:bg-[#FF5F00] hover:text-white transition-all duration-700">
+        Apply to Work with Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+</style>
